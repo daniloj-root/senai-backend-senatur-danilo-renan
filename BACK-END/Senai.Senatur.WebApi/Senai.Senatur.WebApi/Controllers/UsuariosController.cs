@@ -16,6 +16,7 @@ namespace Senai.Senatur.WebApi.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
+        private const string secretKey = "VGhyb3cgZG93biBhbGwgdGhlIHN0dWZmIGluIHRoZSBraXRjaGVuIGZvb2xlZCBhZ2FpbiB0aGlua2luZyB0aGUgZG9nIGxpa2VzIG1lIHBsYXk";
         private IUsuariosRepository _usuariosRepository { get; set; }
 
         public UsuariosController()
@@ -79,8 +80,33 @@ namespace Senai.Senatur.WebApi.Controllers
             {
                 return NotFound("Email e/ou senha não encontrados não é/são válidos");
             }
-
             
+             var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.ID.ToString()),
+                new Claim(ClaimTypes.Surname, usuarioBuscado.Sobrenome),
+                new Claim(ClaimTypes.Name, usuarioBuscado.Nome),
+                new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString())
+            };
+
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            // Gera o token
+            var token = new JwtSecurityToken(
+                issuer: "Senai.Senatur.WebApi",
+                audience: "Senai.Senatur.WebApi",
+                claims: claims,                   
+                expires: DateTime.Now.AddMinutes(15), 
+                signingCredentials: creds
+            );
+
+            // Retorna Ok com o token
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token)
+            });
+        
         }
 
         // PUT api/Usuarios/5

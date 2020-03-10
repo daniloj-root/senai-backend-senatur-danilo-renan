@@ -62,10 +62,10 @@ namespace Senai.Senatur.WebApi
                         ClockSkew = TimeSpan.FromMinutes(30),
 
                         // Nome da issuer, de onde está vindo
-                        ValidIssuer = "Senatur.WebApi",
+                        ValidIssuer = "Senai.Senatur.WebApi",
 
                         // Nome da audience, de onde está vindo
-                        ValidAudience = "Senatur.WebApi"
+                        ValidAudience = "Senai.Senatur.WebApi"
                     };
                 });
         }
