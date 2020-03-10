@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
 using Senai.Senatur.WebApi.Interfaces;
+using Senai.Senatur.WebApi.Models;
 using Senai.Senatur.WebApi.Repositories;
 
 namespace Senai.Senatur.WebApi.Controllers
@@ -15,6 +16,7 @@ namespace Senai.Senatur.WebApi.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
+        private const string secretKey = "VGhyb3cgZG93biBhbGwgdGhlIHN0dWZmIGluIHRoZSBraXRjaGVuIGZvb2xlZCBhZ2FpbiB0aGlua2luZyB0aGUgZG9nIGxpa2VzIG1lIHBsYXk";
         private IUsuariosRepository _usuariosRepository { get; set; }
 
         public UsuariosController()
@@ -66,6 +68,44 @@ namespace Senai.Senatur.WebApi.Controllers
             {
                 return BadRequest(e);
             }
+        }
+
+        //POST api/Usuarios/Login
+        [HttpPost]
+        public IActionResult Login(UsuarioViewModel usuarioLogando)
+        {
+            var usuarioLogado = _usuariosRepository.ListarPorEmailSenha(usuarioLogando.Email, usuarioLogando.Senha);
+
+            if (usuarioLogado == null)
+            {
+                return NotFound("Email e/ou senha não encontrados não é/são válidos");
+            }
+            
+             var claims = new[] {
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioLogado.ID.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, usuarioLogado.Nome),
+                new Claim(ClaimTypes.Role, usuarioLogado.IdTipoUsuario.ToString())
+            };
+
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            // Gera o token
+            var token = new JwtSecurityToken(
+                issuer: "Senai.Senatur.WebApi",
+                audience: "Senai.Senatur.WebApi",
+                claims: claims,                   
+                expires: DateTime.Now.AddMinutes(15), 
+                signingCredentials: creds
+            );
+
+            // Retorna Ok com o token
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token)
+            });
+        
         }
 
         // PUT api/Usuarios/5
