@@ -19,7 +19,7 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacotesRepository = new PacotesRepository();
         }
 
-        // GET api/values
+        // GET api/Pacotes
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -34,7 +34,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        [HttpGet("")]
+        [HttpGet("pesquisar/ativos")]
         public IActionResult ListarAtivos()
         {
             try
@@ -48,14 +48,14 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
+        // GET api/pesquisar/inativos
+        [HttpGet("pesquisar/inativos")]
         public IActionResult ListarInativos(int id)
         {
             try
             {
-                var pacote = _pacotesRepository.ListarInativos();
-                return Ok(pacote);
+                var listaPacotes = _pacotesRepository.ListarInativos();
+                return Ok(listaPacotes);
 
             }
             catch (Exception e)
@@ -64,7 +64,23 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // POST api/values
+        // GET api/pesquisar/ordenar
+        [HttpGet("pesquisar/ordenar")]
+        public IActionResult ListarOrdenadoPorPreco(int id)
+        {
+            try
+            {
+                var listaPacotes = _pacotesRepository.ListarOrdenadoPorPreco();
+                return Ok(listaPacotes);
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        // POST api/Pacotes
         [HttpPost]
         public IActionResult Cadastrar(Pacotes novoPacote)
         {
@@ -79,7 +95,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // PUT api/values/5
+        // PUT api/Pacotes/5
         [HttpPut("{id}")]
         public IActionResult Atualizar(Pacotes pacoteAtualizado)
         {
@@ -101,7 +117,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // DELETE api/values/5
+        // DELETE api/Pacotes/5
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

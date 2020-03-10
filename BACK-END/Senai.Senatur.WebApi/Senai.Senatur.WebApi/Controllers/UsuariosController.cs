@@ -22,7 +22,7 @@ namespace Senai.Senatur.WebApi.Controllers
             _usuariosRepository = new UsuariosRepository();
         }
 
-        // GET api/values
+        // GET api/Usuarios
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -37,7 +37,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // GET api/values/5
+        // GET api/Usuarios/5
         [HttpGet("{id}")]
         public IActionResult ListarPorId(int id)
         {
@@ -53,7 +53,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // POST api/values
+        // POST api/Usuarios
         [HttpPost]
         public IActionResult Cadastrar(Usuarios novoUsuario)
         {
@@ -68,13 +68,13 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // PUT api/values/5
+        // PUT api/Usuarios/5
         [HttpPut("{id}")]
         public IActionResult Atualizar(Usuarios usuarioAtualizado)
         {
             var usuarioEscolhido = _usuariosRepository.ListarPorId(usuarioAtualizado.IdUsuario);
 
-            if(usuarioEscolhido == null)
+            if (usuarioEscolhido == null)
             {
                 return NotFound();
             }
@@ -90,7 +90,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // DELETE api/values/5
+        // DELETE api/Usuarios/5
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
