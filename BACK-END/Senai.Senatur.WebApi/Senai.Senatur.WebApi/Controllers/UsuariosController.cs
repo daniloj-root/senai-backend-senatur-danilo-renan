@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
 using Senai.Senatur.WebApi.Interfaces;
+using Senai.Senatur.WebApi.Models;
 using Senai.Senatur.WebApi.Repositories;
 
 namespace Senai.Senatur.WebApi.Controllers
@@ -66,6 +67,20 @@ namespace Senai.Senatur.WebApi.Controllers
             {
                 return BadRequest(e);
             }
+        }
+
+        //POST api/Usuarios/Login
+        [HttpPost]
+        public IActionResult Login(UsuarioViewModel usuarioLogando)
+        {
+            var usuarioLogado = _usuariosRepository.ListarPorEmailSenha(usuarioLogando.Email, usuarioLogando.Senha);
+
+            if (usuarioLogado == null)
+            {
+                return NotFound("Email e/ou senha não encontrados não é/são válidos");
+            }
+
+            
         }
 
         // PUT api/Usuarios/5

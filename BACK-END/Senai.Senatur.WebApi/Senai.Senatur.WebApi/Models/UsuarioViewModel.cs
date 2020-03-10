@@ -7,5 +7,7 @@ namespace Senai.Senatur.WebApi.Models
 {
     public class UsuarioViewModel
     {
+        public string Email {get; set;}
+        public string Senha { get; set; }
     }
 }
