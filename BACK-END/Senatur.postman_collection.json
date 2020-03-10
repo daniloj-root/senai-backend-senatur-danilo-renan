@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "c18652d4-0758-4673-ae9f-35fa96eb165b",
+		"name": "Senatur",
+		"description": "Coleção de Endpoints do projeto Senatur.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pacotes",
+			"item": [
+				{
+					"name": "http://localhost:5000/api/Pacotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes"
+							]
+						},
+						"description": "Listar Todos os Pacotes"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"1"
+							]
+						},
+						"description": "Listar Pacote por Id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes/ativos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/ativos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"ativos"
+							]
+						},
+						"description": "Listar Ativos"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes/ordenar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/ordenar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"ordenar"
+							]
+						},
+						"description": "Listar Ordenado por Preços"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes/inativos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/inativos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"inativos"
+							]
+						},
+						"description": "Listar Inativos"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes"
+							]
+						},
+						"description": "Atualizar dados com [PUT]"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes"
+							]
+						},
+						"description": "Cadastrar Pacotes"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Pacotes/id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Pacotes/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Pacotes",
+								"id"
+							]
+						},
+						"description": "Deletar Pacote Passando o Id"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "http://localhost:5000/api/Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						},
+						"description": "Listar todos os Usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Usuarios/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"1"
+							]
+						},
+						"description": "Listar Usuario passando o Id pela requisição"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						},
+						"description": "Listar Usuario por Email e Senha"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						},
+						"description": "Cadastrar Usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Usuarios",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						},
+						"description": "Atualizar Usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/api/Usuarios/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"1"
+							]
+						},
+						"description": "Deleta os Usuarios passando o Id pela Requisição"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
