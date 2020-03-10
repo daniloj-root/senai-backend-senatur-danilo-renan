@@ -25,6 +25,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\36591349880\.nuget\packages\microsoft.entityframeworkcore.tools\2.1.14</PkgMicrosoft_EntityFrameworkCore_Tools>
+>>>>>>> c2c19f10624b93b1a288016d70890dea788d1c67
 =======
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\36591349880\.nuget\packages\microsoft.entityframeworkcore.tools\2.1.14</PkgMicrosoft_EntityFrameworkCore_Tools>
 >>>>>>> c2c19f10624b93b1a288016d70890dea788d1c67

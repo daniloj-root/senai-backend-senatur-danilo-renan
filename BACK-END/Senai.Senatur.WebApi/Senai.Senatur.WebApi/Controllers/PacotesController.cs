@@ -4,89 +4,122 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Senatur.WebApi.Domains;
+using Senai.Senatur.WebApi.Interfaces;
+using Senai.Senatur.WebApi.Repositories;
 
 namespace Senai.Senatur.WebApi.Controllers
 {
     public class PacotesController : Controller
     {
-        // GET: Pacotes
-        public ActionResult Index()
+        private IPacotesRepository _pacotesRepository { get; set; }
+
+        public PacotesController()
         {
-            return View();
+            _pacotesRepository = new PacotesRepository();
         }
 
-        // GET: Pacotes/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Pacotes/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Pacotes/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // GET api/values
+        [HttpGet]
+        public IActionResult ListarTodos()
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
+                var listaPacotes = _pacotesRepository.ListarTodos();
+                return Ok(listaPacotes);
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                return BadRequest(e);
             }
         }
 
-        // GET: Pacotes/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Pacotes/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [HttpGet("")]
+        public IActionResult ListarAtivos()
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
+                var listaPacotes = _pacotesRepository.ListarAtivos();
+                return Ok(listaPacotes);
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                return BadRequest(e);
             }
         }
 
-        // GET: Pacotes/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Pacotes/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public IActionResult ListarInativos(int id)
         {
             try
             {
-                // TODO: Add delete logic here
+                var pacote = _pacotesRepository.ListarInativos();
+                return Ok(pacote);
 
-                return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                return BadRequest(e);
+            }
+        }
+
+        // POST api/values
+        [HttpPost]
+        public IActionResult Cadastrar(Pacotes novoPacote)
+        {
+            try
+            {
+                _pacotesRepository.Cadastrar(novoPacote);
+                return StatusCode(201);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        // PUT api/values/5
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(Pacotes pacoteAtualizado)
+        {
+            var pacoteEscolhido = _pacotesRepository.ListarPorId(pacoteAtualizado.IdPacote);
+
+            if (pacoteEscolhido == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                _pacotesRepository.Atualizar(pacoteAtualizado);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var pacoteEscolhido = _pacotesRepository.ListarPorId(id);
+
+            if (pacoteEscolhido == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                _pacotesRepository.Deletar(pacoteEscolhido);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
             }
         }
     }
