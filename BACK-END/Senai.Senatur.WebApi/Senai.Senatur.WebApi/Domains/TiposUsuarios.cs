@@ -9,7 +9,7 @@ namespace Senai.Senatur.WebApi.Domains
         {
             Usuarios = new HashSet<Usuarios>();
         }
-
+            
         public int IdTipoUsuario { get; set; }
         public string Titulo { get; set; }
 
