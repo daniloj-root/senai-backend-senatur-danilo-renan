@@ -82,10 +82,9 @@ namespace Senai.Senatur.WebApi.Controllers
             }
             
              var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.ID.ToString()),
-                new Claim(ClaimTypes.Surname, usuarioBuscado.Sobrenome),
-                new Claim(ClaimTypes.Name, usuarioBuscado.Nome),
-                new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString())
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioLogado.ID.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, usuarioLogado.Nome),
+                new Claim(ClaimTypes.Role, usuarioLogado.IdTipoUsuario.ToString())
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));

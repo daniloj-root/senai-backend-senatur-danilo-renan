@@ -21,6 +21,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // GET api/Pacotes
         [HttpGet]
+        [Authorize(Roles = "1, 2")]
         public IActionResult ListarTodos()
         {
             try
@@ -35,6 +36,7 @@ namespace Senai.Senatur.WebApi.Controllers
         }
 
         [HttpGet("pesquisar/ativos")]
+        [Authorize(Roles = "1, 2")]
         public IActionResult ListarAtivos()
         {
             try
@@ -50,6 +52,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // GET api/pesquisar/inativos
         [HttpGet("pesquisar/inativos")]
+        [Authorize(Roles = "1, 2")]
         public IActionResult ListarInativos(int id)
         {
             try
@@ -66,6 +69,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // GET api/pesquisar/ordenar
         [HttpGet("pesquisar/ordenar")]
+        [Authorize(Roles = "1, 2")]
         public IActionResult ListarOrdenadoPorPreco(int id)
         {
             try
@@ -82,6 +86,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // POST api/Pacotes
         [HttpPost]
+        [Authorize(Roles = "1")]
         public IActionResult Cadastrar(Pacotes novoPacote)
         {
             try
@@ -97,6 +102,8 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // PUT api/Pacotes/5
         [HttpPut("{id}")]
+
+        [Authorize(Roles = "1")]
         public IActionResult Atualizar(Pacotes pacoteAtualizado)
         {
             var pacoteEscolhido = _pacotesRepository.ListarPorId(pacoteAtualizado.IdPacote);
@@ -119,6 +126,7 @@ namespace Senai.Senatur.WebApi.Controllers
 
         // DELETE api/Pacotes/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "1")]
         public IActionResult Deletar(int id)
         {
             var pacoteEscolhido = _pacotesRepository.ListarPorId(id);
