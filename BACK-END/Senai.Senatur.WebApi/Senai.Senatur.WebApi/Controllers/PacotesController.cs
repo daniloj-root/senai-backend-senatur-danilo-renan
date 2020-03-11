@@ -26,14 +26,27 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacotesRepository = new PacotesRepository();
         }
 
+<<<<<<< HEAD
 
+=======
+        // GET api/Pacotes
+>>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         /// <summary>
         /// Lista todos os pacotes ativos
         /// </summary>
+<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ativos</returns>
         /// 
         
         [HttpGet("pesquisar/ativos")]
+=======
+        /// <returns>Uma lista de Pacotes</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        [HttpGet]
+
+>>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarAtivos()
         {
@@ -48,12 +61,21 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        //GET: api/pesquisar/ativos
         /// <summary>
         /// Lista todos os pacotes ativos
         /// </summary>
         /// <returns>Uma lista de Pacotes ativos</returns>
+<<<<<<< HEAD
         // GET api/pesquisar/inativos
         [HttpGet("pesquisar/inativos")]
+=======
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        [HttpGet("pesquisar/ativos")]
+
+>>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarInativos(int id)
         {
@@ -69,12 +91,22 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        // GET api/pesquisar/inativos
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de forma ascendente
         /// </summary>
+<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ordenados por preço de forma ascendente</returns>
         // GET api/pesquisar/ordenar
         [HttpGet("pesquisar/ordenar/asc/")]
+=======
+        /// <returns>Uma lista de Pacotes ativos</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        [HttpGet("pesquisar/inativos")]
+
+>>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarOrdenadoPorPreco()
         {
@@ -90,12 +122,22 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        // GET api/pesquisar/ordenar
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de fkrma decrescente
         /// </summary>
+<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ordenados por preço de forma decrescente</returns>
         // GET api/pesquisar/ordenar
         [HttpGet("pesquisar/ordenar/desc/")]
+=======
+        /// <returns>Uma lista de Pacotes ordenados por preço</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        [HttpGet("pesquisar/ordenar")]
+
+>>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarOrdenadoPorPrecoDesc()
         {
@@ -131,6 +173,7 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        // POST api/Pacotes
         /// <summary>
         /// Lista todos pacotes 
         /// </summary>
@@ -157,8 +200,11 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Cadastrar um pacote 
         /// </summary>
         /// <returns>StatusCode 201</returns>
-        // POST api/Pacotes
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         [HttpPost]
+
         [Authorize(Roles = "1")]
         public IActionResult Cadastrar(Pacotes novoPacote)
         {
@@ -179,6 +225,10 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <param name="pacoteAtualizado">objeto Pacote com um ID existente e as informações atualizadas</param>
         /// <returns>StatusCode 200</returns>
         // PUT api/Pacotes/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
         [HttpPut("{id}")]
         [Authorize(Roles = "1")]
         public IActionResult Atualizar(Pacotes pacoteAtualizado)
@@ -201,7 +251,11 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <param name="id">ID do pacote</param>
         /// <returns>StatusCode 200</returns>
         // DELETE api/Pacotes/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         [HttpDelete("{id}")]
+
         [Authorize(Roles = "1")]
         public IActionResult Deletar(int id)
         {
