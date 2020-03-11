@@ -80,6 +80,10 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista todos os pacotes, mas ordenados por preço
+        /// </summary>
+        /// <returns>Uma lista de Pacotes ordenados por preço</returns>
         // GET api/pesquisar/ordenar
         [HttpGet("pesquisar/ordenar")]
         [Authorize(Roles = "1, 2")]
@@ -97,6 +101,10 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastrar um pacote 
+        /// </summary>
+        /// <returns>StatusCode 201</returns>
         // POST api/Pacotes
         [HttpPost]
         [Authorize(Roles = "1")]
@@ -113,6 +121,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um pacote
+        /// </summary>
+        /// <param name="pacoteAtualizado">objeto Pacote com um ID existente e as informações atualizadas</param>
+        /// <returns>StatusCode 200</returns>
         // PUT api/Pacotes/5
         [HttpPut("{id}")]
 
@@ -137,6 +150,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um pacote
+        /// </summary>
+        /// <param name="id">ID do pacote</param>
+        /// <returns>StatusCode 200</returns>
         // DELETE api/Pacotes/5
         [HttpDelete("{id}")]
         [Authorize(Roles = "1")]
