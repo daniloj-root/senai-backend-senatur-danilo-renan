@@ -11,7 +11,9 @@ namespace Senai.Senatur.WebApi.Interfaces
         IEnumerable<Pacotes> ListarTodos();
         IEnumerable<Pacotes> ListarAtivos();
         IEnumerable<Pacotes> ListarInativos();
+        IEnumerable<Pacotes> ListarPorCidade(string nomeCidade);
         IEnumerable<Pacotes> ListarOrdenadoPorPreco();
+        IEnumerable<Pacotes> ListarOrdenadoPorPrecoDesc();
         Pacotes ListarPorId(int id);
         void Cadastrar(Pacotes novoPacote);
         void Atualizar(Pacotes pacoteAtualizado);

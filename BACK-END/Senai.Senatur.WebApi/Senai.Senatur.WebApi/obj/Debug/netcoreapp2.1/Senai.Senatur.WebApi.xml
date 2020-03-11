@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai.Senatur.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarAtivos">
+            <summary>
+            Lista todos os pacotes ativos
+            </summary>
+            <returns>Uma lista de Pacotes ativos</returns>
+            
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarInativos(System.Int32)">
+            <summary>
+            Lista todos os pacotes ativos
+            </summary>
+            <returns>Uma lista de Pacotes ativos</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarOrdenadoPorPreco">
+            <summary>
+            Lista todos os pacotes, mas ordenados por preço de forma ascendente
+            </summary>
+            <returns>Uma lista de Pacotes ordenados por preço de forma ascendente</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarOrdenadoPorPrecoDesc">
+            <summary>
+            Lista todos os pacotes, mas ordenados por preço de fkrma decrescente
+            </summary>
+            <returns>Uma lista de Pacotes ordenados por preço de forma decrescente</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarPorCidade(System.String)">
+            <summary>
+            Lista todos os pacotes de uma cidade
+            </summary>
+            <returns>Uma lista de Pacotes de uma cidade específicia</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarTodos">
+            <summary>
+            Lista todos pacotes 
+            </summary>
+            <returns>Uma lista de Pacotes</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.Cadastrar(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Cadastrar um pacote 
+            </summary>
+            <returns>StatusCode 201</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.Atualizar(Senai.Senatur.WebApi.Domains.Pacotes)">
+            <summary>
+            Atualiza um pacote
+            </summary>
+            <param name="pacoteAtualizado">objeto Pacote com um ID existente e as informações atualizadas</param>
+            <returns>StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.Deletar(System.Int32)">
+            <summary>
+            Deleta um pacote
+            </summary>
+            <param name="id">ID do pacote</param>
+            <returns>StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarPorId(System.Int32)">
+            <summary>
+            Lista pacotes por Id
+            </summary>
+            <returns>Uma um pacote</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.ListarTodos">
+            <summary>
+            Busca todos os usuários no banco de dados e seus respectivos tipos
+            </summary>
+            <returns>objetos Usuarios populados com todos os usuários do banco de dados - StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.ListarPorId(System.Int32)">
+            <summary>
+            Procura um usuário pelo seu respectivo ID
+            </summary>
+            <param name="id">ID do usuário desejado</param>
+            <returns>objeto Usuários populado com o usuário desejado - StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Cadastrar(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">objeto do tipo Usuarios</param>
+            <returns>Status Code 201</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Login(Senai.Senatur.WebApi.Models.UsuarioViewModel)">
+            <summary>
+            Faz o login de um usuário
+            </summary>
+            <param name="usuarioLogando">objeto Usuarios populado com email e senha</param>
+            <returns>Token de autorização JWT - StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Atualizar(Senai.Senatur.WebApi.Domains.Usuarios)">
+            <summary>
+            Atualiza um usuário no banco de dados
+            </summary>
+            <param name="usuarioAtualizado">objeto Usuários com um id existente e as informações a serem atualizadas</param>
+            <returns>StatusCode 200</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário do banco de dados
+            </summary>
+            <param name="id">ID do usuário</param>
+            <returns>StatusCode 200</returns>
+        </member>
+    </members>
+</doc>

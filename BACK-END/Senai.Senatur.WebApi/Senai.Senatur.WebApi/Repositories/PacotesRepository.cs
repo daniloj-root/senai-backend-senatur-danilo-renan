@@ -13,16 +13,24 @@ namespace Senai.Senatur.WebApi.Repositories
         public void Atualizar(Pacotes pacoteAtualizado)
         {
             dbo.Pacotes.Update(pacoteAtualizado);
+            dbo.SaveChanges();
         }
 
         public void Cadastrar(Pacotes novoPacote)
         {
             dbo.Pacotes.Add(novoPacote);
+            dbo.SaveChanges();
         }
 
         public void Deletar(Pacotes pacoteEscolhido)
         {
             dbo.Pacotes.Remove(pacoteEscolhido);
+            dbo.SaveChanges();
+        }
+
+        public IEnumerable<Pacotes> ListarPorCidade(string nomeCidade)
+        {
+            return dbo.Pacotes.Where(p => p.NomeCidade.Contains(nomeCidade));
         }
 
         public IEnumerable<Pacotes> ListarAtivos()
@@ -38,6 +46,11 @@ namespace Senai.Senatur.WebApi.Repositories
         public IEnumerable<Pacotes> ListarOrdenadoPorPreco()
         {
             return dbo.Pacotes.OrderBy(x => x.Valor);
+        }
+
+        public IEnumerable<Pacotes> ListarOrdenadoPorPrecoDesc()
+        {
+            return dbo.Pacotes.OrderByDescending(x => x.Valor);
         }
 
         public Pacotes ListarPorId(int id)

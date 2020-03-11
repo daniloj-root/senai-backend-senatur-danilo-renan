@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Senai.Senatur.WebApi.Repositories
 {
@@ -12,14 +13,7 @@ namespace Senai.Senatur.WebApi.Repositories
     {
         public IEnumerable<Usuarios> ListarTodos()
         {
-            var listaUsuarios = dbo.Usuarios.Select(x => new Usuarios
-            {
-                IdUsuario = x.IdUsuario,
-                Email = x.Email,
-                IdTipoUsuarioNavigation = dbo.TiposUsuarios.FirstOrDefault(t => t.IdTipoUsuario == x.IdTipoUsuario)
-            });
-
-            return listaUsuarios;
+            return dbo.Usuarios.Include(x => x.IdTipoUsuarioNavigation);
         }
 
         public Usuarios ListarPorId(int id)
@@ -39,16 +33,19 @@ namespace Senai.Senatur.WebApi.Repositories
         public void Cadastrar(Usuarios novoUsuario)
         {
             dbo.Usuarios.Add(novoUsuario);
+            dbo.SaveChanges();
         }
 
         public void Atualizar(Usuarios usuarioAtualizado)
         {
             dbo.Usuarios.Update(usuarioAtualizado);
+            dbo.SaveChanges();
         }
 
         public void Deletar(Usuarios usuarioEscolhido)
         {
             dbo.Usuarios.Remove(usuarioEscolhido);
+            dbo.SaveChanges();
         }
     }
 }

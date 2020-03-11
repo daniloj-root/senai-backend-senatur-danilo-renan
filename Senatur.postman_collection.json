@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "c18652d4-0758-4673-ae9f-35fa96eb165b",
-		"name": "Senatur",
+		"_postman_id": "3d3fd89a-66ed-4da1-ab80-5ea09cdc1a16",
+		"name": "Senatur copy",
 		"description": "Coleção de Endpoints do projeto Senatur.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,10 +10,27 @@
 			"name": "Pacotes",
 			"item": [
 				{
-					"name": "http://localhost:5000/api/Pacotes",
+					"name": "ListarTodos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU1MzM5LCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.aXXu6JMwTN889WivzKePS9MMDsuk_hZmj_-VyE54Xvg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/Pacotes",
 							"protocol": "http",
@@ -31,8 +48,18 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes/1",
+					"name": "ListarPorId",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU0ODIyLCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.dAUYjAU6ppVCQ8gpebjKrsWczFmVyCmo54BUgO3baI0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -53,12 +80,29 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes/ativos",
+					"name": "ListarAtivos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU2MTgzLCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.IaMuNm6LdWga60JpKuadr8o-xWvURFS5t00B9j5JKGU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:5000/api/Pacotes/ativos",
+							"raw": "http://localhost:5000/api/Pacotes/pesquisar/ativos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -67,6 +111,7 @@
 							"path": [
 								"api",
 								"Pacotes",
+								"pesquisar",
 								"ativos"
 							]
 						},
@@ -75,12 +120,22 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes/ordenar",
+					"name": "ListarOrdenadoPorPrecos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU2MTgzLCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.IaMuNm6LdWga60JpKuadr8o-xWvURFS5t00B9j5JKGU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/Pacotes/ordenar",
+							"raw": "http://localhost:5000/api/Pacotes/pesquisar/ordenar/asc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -89,7 +144,9 @@
 							"path": [
 								"api",
 								"Pacotes",
-								"ordenar"
+								"pesquisar",
+								"ordenar",
+								"asc"
 							]
 						},
 						"description": "Listar Ordenado por Preços"
@@ -97,12 +154,22 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes/inativos",
+					"name": "ListarInativos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU2MTgzLCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.IaMuNm6LdWga60JpKuadr8o-xWvURFS5t00B9j5JKGU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/Pacotes/inativos",
+							"raw": "http://localhost:5000/api/Pacotes/pesquisar/inativos",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -111,6 +178,7 @@
 							"path": [
 								"api",
 								"Pacotes",
+								"pesquisar",
 								"inativos"
 							]
 						},
@@ -119,7 +187,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes",
+					"name": "Atualizar",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -140,10 +208,29 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes",
+					"name": "Cadastrar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU4MjE3LCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.7XEhwlu7SAyCKKamobVDvOWlaDhK082PjQnO-pa4CKU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n      {\r\n        \r\n        \"nomePacote\": \"ACAPULCO\",\r\n        \"descricao\": \"O que não falta em Salvador são atrações. Prova disso são as praias, os museus e as construções seculares que dão um charme mais que especial à região. A cidade, sinônimo de alegria, também é conhecida pela efervescência cultural que a credenciou como um dos destinos mais procurados por turistas brasileiros e estrangeiros. O Pelourinho e o Elevador são alguns dos principais pontos de visitação, Chaves tambem foi\",\r\n        \"dataIda\": \"2020-08-06T00:00:00\",\r\n        \"dataVolta\": \"2020-08-10T00:00:00\",\r\n        \"valor\": 854.00,\r\n        \"nomeCidade\": \"Salvador\",\r\n        \"ativo\": true\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/Pacotes",
 							"protocol": "http",
@@ -161,12 +248,22 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Pacotes/id",
+					"name": "Deletar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU4MjE3LCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.7XEhwlu7SAyCKKamobVDvOWlaDhK082PjQnO-pa4CKU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/Pacotes/id",
+							"raw": "http://localhost:5000/api/Pacotes/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -175,7 +272,7 @@
 							"path": [
 								"api",
 								"Pacotes",
-								"id"
+								"1"
 							]
 						},
 						"description": "Deletar Pacote Passando o Id"
@@ -189,8 +286,58 @@
 			"name": "Usuarios",
 			"item": [
 				{
-					"name": "http://localhost:5000/api/Usuarios",
+					"name": "Login",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Email\": \"admin@admin.com\",\n\t\"Senha\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU4MjE3LCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.7XEhwlu7SAyCKKamobVDvOWlaDhK082PjQnO-pa4CKU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -210,7 +357,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Usuarios/1",
+					"name": "ListarUsuarios",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -232,31 +379,29 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Usuarios",
+					"name": "Cadastrar",
 					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Usuarios"
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzOTU4ODcwLCJpc3MiOiJTZW5haS5TZW5hdHVyLldlYkFwaSIsImF1ZCI6IlNlbmFpLlNlbmF0dXIuV2ViQXBpIn0.kV1SNAMov9QQWJYOLK4pAXFMwjh4piSnkUaybdrDYu0",
+									"type": "string"
+								}
 							]
 						},
-						"description": "Listar Usuario por Email e Senha"
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:5000/api/Usuarios",
-					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"email\":\"renan@renan.com\",\n\t\t\"senha\":\"renan\",\n\t\t\"idTipoUsuario\": \"2\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/Usuarios",
 							"protocol": "http",
@@ -274,33 +419,21 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:5000/api/Usuarios",
+					"name": "Atualizar",
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/api/Usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"api",
-								"Usuarios"
-							]
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"danilo@danilo.com\",\n\t\"senha\":\"danilo\",\n\t\"idTipoUsuario\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						"description": "Atualizar Usuario"
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:5000/api/Usuarios/1",
-					"request": {
-						"method": "DELETE",
-						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/Usuarios/1",
+							"raw": "http://localhost:5000/api/Usuarios/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -309,7 +442,29 @@
 							"path": [
 								"api",
 								"Usuarios",
-								"1"
+								"3"
+							]
+						},
+						"description": "Atualizar Usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"2"
 							]
 						},
 						"description": "Deleta os Usuarios passando o Id pela Requisição"

@@ -18,10 +18,14 @@ namespace Senai.Senatur.WebApi
                 // Adiciona o MVC ao projeto
                 .AddMvc()
 
+                .AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        )
+
                 // Define a versão do .NET Core
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Senai.Senatur.WebApi", Version = "v1" });
@@ -56,7 +60,7 @@ namespace Senai.Senatur.WebApi
                         ValidateLifetime = true,
 
                         // Forma de criptografia
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Ghyb3cgZG93biBhbGwgdGhlIHN0dWZmIGluIHRoZSBraXRjaGVuIGZvb2xlZCBhZ2FpbiB0aGlua2luZyB0aGUgZG9nIGxpa2VzIG1lIHBsYXk")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chave-autenticacao-senatur")),
 
                         // Tempo de expiração do token
                         ClockSkew = TimeSpan.FromMinutes(30),

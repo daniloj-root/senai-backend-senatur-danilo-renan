@@ -20,7 +20,6 @@ namespace Senai.Senatur.WebApi.Controllers
     
     public class UsuariosController : ControllerBase
     {
-        private const string secretKey = "VGhyb3cgZG93biBhbGwgdGhlIHN0dWZmIGluIHRoZSBraXRjaGVuIGZvb2xlZCBhZ2FpbiB0aGlua2luZyB0aGUgZG9nIGxpa2VzIG1lIHBsYXk";
         private IUsuariosRepository _usuariosRepository { get; set; }
 
         public UsuariosController()
@@ -94,7 +93,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <param name="usuarioLogando">objeto Usuarios populado com email e senha</param>
         /// <returns>Token de autorização JWT - StatusCode 200</returns>
         //POST api/Usuarios/Login
-        [HttpPost]
+        [HttpPost("login")]
         public IActionResult Login(UsuarioViewModel usuarioLogando)
         {
             var usuarioLogado = _usuariosRepository.ListarPorEmailSenha(usuarioLogando.Email, usuarioLogando.Senha);
@@ -110,7 +109,7 @@ namespace Senai.Senatur.WebApi.Controllers
                 new Claim(ClaimTypes.Role, usuarioLogado.IdTipoUsuario.ToString())
             };
 
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("chave-autenticacao-senatur"));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -136,8 +135,8 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <param name="usuarioAtualizado">objeto Usuários com um id existente e as informações a serem atualizadas</param>
         /// <returns>StatusCode 200</returns>
-        // PUT api/Usuarios/5
-        [HttpPut("{id}")]
+        // PUT api/Usuarios/
+        [HttpPut]
         public IActionResult Atualizar(Usuarios usuarioAtualizado)
         {
             var usuarioEscolhido = _usuariosRepository.ListarPorId(usuarioAtualizado.IdUsuario);
