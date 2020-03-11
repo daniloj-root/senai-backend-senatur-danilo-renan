@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Senai.Senatur.WebApi.Domains;
 using Senai.Senatur.WebApi.Interfaces;
 using Senai.Senatur.WebApi.Models;
@@ -14,6 +17,7 @@ namespace Senai.Senatur.WebApi.Controllers
     [Produces("application/json")]
 
     [ApiController]
+    
     public class UsuariosController : ControllerBase
     {
         private const string secretKey = "VGhyb3cgZG93biBhbGwgdGhlIHN0dWZmIGluIHRoZSBraXRjaGVuIGZvb2xlZCBhZ2FpbiB0aGlua2luZyB0aGUgZG9nIGxpa2VzIG1lIHBsYXk";
@@ -24,7 +28,12 @@ namespace Senai.Senatur.WebApi.Controllers
             _usuariosRepository = new UsuariosRepository();
         }
 
+        /// <summary>
+        /// Busca todos os usuários no banco de dados e seus respectivos tipos
+        /// </summary>
+        /// <returns>objetos Usuarios populados com todos os usuários do banco de dados - StatusCode 200</returns>
         // GET api/Usuarios
+
         [HttpGet]
         public IActionResult ListarTodos()
         {
@@ -39,6 +48,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Procura um usuário pelo seu respectivo ID
+        /// </summary>
+        /// <param name="id">ID do usuário desejado</param>
+        /// <returns>objeto Usuários populado com o usuário desejado - StatusCode 200</returns>
         // GET api/Usuarios/5
         [HttpGet("{id}")]
         public IActionResult ListarPorId(int id)
@@ -54,7 +68,11 @@ namespace Senai.Senatur.WebApi.Controllers
                 return BadRequest(e);
             }
         }
-
+        /// <summary>
+        /// Cadastra um novo usuário
+        /// </summary>
+        /// <param name="novoUsuario">objeto do tipo Usuarios</param>
+        /// <returns>Status Code 201</returns>
         // POST api/Usuarios
         [HttpPost]
         public IActionResult Cadastrar(Usuarios novoUsuario)
@@ -70,6 +88,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Faz o login de um usuário
+        /// </summary>
+        /// <param name="usuarioLogando">objeto Usuarios populado com email e senha</param>
+        /// <returns>Token de autorização JWT - StatusCode 200</returns>
         //POST api/Usuarios/Login
         [HttpPost]
         public IActionResult Login(UsuarioViewModel usuarioLogando)
@@ -82,8 +105,8 @@ namespace Senai.Senatur.WebApi.Controllers
             }
             
              var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Jti, usuarioLogado.ID.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, usuarioLogado.Nome),
+                new Claim(JwtRegisteredClaimNames.Jti, usuarioLogado.IdTipoUsuario.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, usuarioLogado.Email),
                 new Claim(ClaimTypes.Role, usuarioLogado.IdTipoUsuario.ToString())
             };
 
@@ -108,6 +131,11 @@ namespace Senai.Senatur.WebApi.Controllers
         
         }
 
+        /// <summary>
+        /// Atualiza um usuário no banco de dados
+        /// </summary>
+        /// <param name="usuarioAtualizado">objeto Usuários com um id existente e as informações a serem atualizadas</param>
+        /// <returns>StatusCode 200</returns>
         // PUT api/Usuarios/5
         [HttpPut("{id}")]
         public IActionResult Atualizar(Usuarios usuarioAtualizado)
@@ -130,6 +158,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um usuário do banco de dados
+        /// </summary>
+        /// <param name="id">ID do usuário</param>
+        /// <returns>StatusCode 200</returns>
         // DELETE api/Usuarios/5
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)

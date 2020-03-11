@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -19,6 +20,10 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacotesRepository = new PacotesRepository();
         }
 
+        /// <summary>
+        /// Lista todos pacotes 
+        /// </summary>
+        /// <returns>Uma lista de Pacotes</returns>
         // GET api/Pacotes
         [HttpGet]
         [Authorize(Roles = "1, 2")]
@@ -35,6 +40,10 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista todos os pacotes ativos
+        /// </summary>
+        /// <returns>Uma lista de Pacotes ativos</returns>
         [HttpGet("pesquisar/ativos")]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarAtivos()
@@ -50,6 +59,10 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista todos os pacotes ativos
+        /// </summary>
+        /// <returns>Uma lista de Pacotes ativos</returns>
         // GET api/pesquisar/inativos
         [HttpGet("pesquisar/inativos")]
         [Authorize(Roles = "1, 2")]
