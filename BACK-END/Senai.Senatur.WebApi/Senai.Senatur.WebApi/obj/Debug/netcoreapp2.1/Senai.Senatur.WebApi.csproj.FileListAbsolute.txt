@@ -13,6 +13,7 @@ C:\Users\48060493876\source\repos\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\
 C:\Users\48060493876\source\repos\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.dll
 C:\Users\48060493876\source\repos\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.deps.json
 C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.runtimeconfig.json
 C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.runtimeconfig.dev.json
@@ -28,6 +29,8 @@ C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebAp
 C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.dll
 C:\Users\36591349880\Desktop\Projetos\Senatur_Tarde\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.pdb
 =======
+=======
+>>>>>>> e1826dbb879b106587acafe419dcec1c99bf8738
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.deps.json
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.runtimeconfig.json
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\bin\Debug\netcoreapp2.1\Senai.Senatur.WebApi.runtimeconfig.dev.json
@@ -42,4 +45,7 @@ C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Sena
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.dll
 C:\Users\48060493876\Documents\Senaitur\BACK-END\Senai.Senatur.WebApi\Senai.Senatur.WebApi\obj\Debug\netcoreapp2.1\Senai.Senatur.WebApi.pdb
+<<<<<<< HEAD
+>>>>>>> e1826dbb879b106587acafe419dcec1c99bf8738
+=======
 >>>>>>> e1826dbb879b106587acafe419dcec1c99bf8738
