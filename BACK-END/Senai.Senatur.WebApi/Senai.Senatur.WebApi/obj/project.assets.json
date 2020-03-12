@@ -11621,26 +11621,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Danilo\\.nuget\\packages\\": {}
+    "C:\\Users\\48060493876\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danilo\\Downloads\\Senatur\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
       "projectName": "Senai.Senatur.WebApi",
-      "projectPath": "C:\\Users\\Danilo\\Downloads\\Senatur\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
-      "packagesPath": "C:\\Users\\Danilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danilo\\Downloads\\Senatur\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\obj\\",
+      "projectPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
+      "packagesPath": "C:\\Users\\48060493876\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Danilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\48060493876\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11687,7 +11691,6 @@
             "version": "[2.1.14, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -11702,16 +11705,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

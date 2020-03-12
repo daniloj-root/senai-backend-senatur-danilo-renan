@@ -31,7 +31,6 @@ namespace Senai.Senatur.WebApi.Controllers
         /// Lista todos os pacotes ativos
         /// </summary>
         /// <returns>Uma lista de Pacotes ativos</returns>
-        // GET api/pesquisar/ativos
         
         [HttpGet("pesquisar/ativos")]
         [Authorize(Roles = "1, 2")]
@@ -71,12 +70,12 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // GET api/pesquisar/inativos
+        // GET: api/pesquisar/ordenar/asc
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de forma ascendente
         /// </summary>
         /// <returns>Uma lista de Pacotes ordenados por preço de forma ascendente</returns>
-        // GET api/pesquisar/ordenar
+        
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
@@ -96,12 +95,12 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // GET api/pesquisar/ordenar
+        // GET: api/pesquisar/ordenar/d
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de fkrma decrescente
         /// </summary>
         /// <returns>Uma lista de Pacotes ordenados por preço de forma decrescente</returns>
-        // GET api/pesquisar/ordenar
+
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet("pesquisar/ordenar/desc/")]
@@ -119,11 +118,13 @@ namespace Senai.Senatur.WebApi.Controllers
                 return BadRequest(e);
             }
         }
+
+        // GET: api/pesquisar/cidade/{nomecidade}
         /// <summary>
         /// Lista todos os pacotes de uma cidade
         /// </summary>
         /// <returns>Uma lista de Pacotes de uma cidade específicia</returns>
-        // GET api/pesquisar/cidade/{nomecidade}
+        
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
@@ -143,12 +144,11 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        // POST api/Pacotes
+        // GET: api/Pacotes
         /// <summary>
         /// Lista todos pacotes 
         /// </summary>
         /// <returns>Uma lista de Pacotes</returns>
-        // GET api/Pacotes
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
@@ -167,11 +167,12 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        // GET: api/Pacotes/5
         /// <summary>
         /// Lista pacotes por Id
         /// </summary>
         /// <returns>Uma um pacote</returns>
-        // GET api/Pacotes
+        
         [HttpGet("{id}")]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarPorId(int id)
@@ -187,11 +188,12 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-
+        /// POST: api/Pacotes
         /// <summary>
         /// Cadastrar um pacote 
         /// </summary>
         /// <returns>StatusCode 201</returns>
+        
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
@@ -211,12 +213,13 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        // PUT: api/Pacotes/5
         /// <summary>
         /// Atualiza um pacote
         /// </summary>
         /// <param name="pacoteAtualizado">objeto Pacote com um ID existente e as informações atualizadas</param>
         /// <returns>StatusCode 200</returns>
-        // PUT api/Pacotes/5
+        
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -237,12 +240,13 @@ namespace Senai.Senatur.WebApi.Controllers
 
         }
 
+        // DELETE: api/Pacotes/5
         /// <summary>
         /// Deleta um pacote
         /// </summary>
         /// <param name="id">ID do pacote</param>
         /// <returns>StatusCode 200</returns>
-        // DELETE api/Pacotes/5
+        /// 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
@@ -267,7 +271,6 @@ namespace Senai.Senatur.WebApi.Controllers
             {
                 return BadRequest(e);
             }
-
         }
     }
 }

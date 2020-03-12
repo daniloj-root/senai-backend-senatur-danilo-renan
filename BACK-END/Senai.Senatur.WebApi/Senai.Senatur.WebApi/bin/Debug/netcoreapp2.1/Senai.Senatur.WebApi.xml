@@ -4,18 +4,17 @@
         <name>Senai.Senatur.WebApi</name>
     </assembly>
     <members>
-        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarAtivos">
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarAtivos(System.Int32)">
             <summary>
             Lista todos os pacotes ativos
             </summary>
             <returns>Uma lista de Pacotes ativos</returns>
-            
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarInativos(System.Int32)">
             <summary>
-            Lista todos os pacotes ativos
+            Lista todos os pacotes inativos
             </summary>
-            <returns>Uma lista de Pacotes ativos</returns>
+            <returns>Uma lista de Pacotes inativos</returns>
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarOrdenadoPorPreco">
             <summary>
@@ -41,7 +40,14 @@
             </summary>
             <returns>Uma lista de Pacotes</returns>
         </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarPorId(System.Int32)">
+            <summary>
+            Lista pacotes por Id
+            </summary>
+            <returns>Uma um pacote</returns>
+        </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.Cadastrar(Senai.Senatur.WebApi.Domains.Pacotes)">
+            POST: api/Pacotes
             <summary>
             Cadastrar um pacote 
             </summary>
@@ -60,12 +66,7 @@
             </summary>
             <param name="id">ID do pacote</param>
             <returns>StatusCode 200</returns>
-        </member>
-        <member name="M:Senai.Senatur.WebApi.Controllers.PacotesController.ListarPorId(System.Int32)">
-            <summary>
-            Lista pacotes por Id
-            </summary>
-            <returns>Uma um pacote</returns>
+            
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.ListarTodos">
             <summary>
@@ -86,6 +87,7 @@
             </summary>
             <param name="novoUsuario">objeto do tipo Usuarios</param>
             <returns>Status Code 201</returns>
+            
         </member>
         <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Login(Senai.Senatur.WebApi.Models.UsuarioViewModel)">
             <summary>
@@ -99,13 +101,6 @@
             Atualiza um usuário no banco de dados
             </summary>
             <param name="usuarioAtualizado">objeto Usuários com um id existente e as informações a serem atualizadas</param>
-            <returns>StatusCode 200</returns>
-        </member>
-        <member name="M:Senai.Senatur.WebApi.Controllers.UsuariosController.Deletar(System.Int32)">
-            <summary>
-            Deleta um usuário do banco de dados
-            </summary>
-            <param name="id">ID do usuário</param>
             <returns>StatusCode 200</returns>
         </member>
     </members>

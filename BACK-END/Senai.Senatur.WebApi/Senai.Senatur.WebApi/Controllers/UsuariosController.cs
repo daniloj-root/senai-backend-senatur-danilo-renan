@@ -188,7 +188,6 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <param name="id">ID do usuário</param>
         /// <returns>StatusCode 200</returns>
-
         // DELETE api/Usuarios/5
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
