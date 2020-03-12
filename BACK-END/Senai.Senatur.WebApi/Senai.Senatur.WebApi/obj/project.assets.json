@@ -11627,11 +11627,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\48060493876\\Desktop\\aaaa\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
       "projectName": "Senai.Senatur.WebApi",
-      "projectPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
+      "projectPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi.csproj",
       "packagesPath": "C:\\Users\\48060493876\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\Senatur\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\48060493876\\Desktop\\aaaa\\senai-backend-senatur-danilo-renan\\BACK-END\\Senai.Senatur.WebApi\\Senai.Senatur.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
