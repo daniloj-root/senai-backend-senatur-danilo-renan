@@ -26,29 +26,17 @@ namespace Senai.Senatur.WebApi.Controllers
             _pacotesRepository = new PacotesRepository();
         }
 
-<<<<<<< HEAD
-
-=======
-        // GET api/Pacotes
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
+        //GET: api/pesquisar/ativos
         /// <summary>
         /// Lista todos os pacotes ativos
         /// </summary>
-<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ativos</returns>
-        /// 
+        // GET api/pesquisar/ativos
         
         [HttpGet("pesquisar/ativos")]
-=======
-        /// <returns>Uma lista de Pacotes</returns>
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-        [HttpGet]
-
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
-        public IActionResult ListarAtivos()
+        
+        public IActionResult ListarAtivos(int id)
         {
             try
             {
@@ -61,21 +49,13 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
-        //GET: api/pesquisar/ativos
+        //GET: api/pesquisar/inativos
         /// <summary>
-        /// Lista todos os pacotes ativos
+        /// Lista todos os pacotes inativos
         /// </summary>
-        /// <returns>Uma lista de Pacotes ativos</returns>
-<<<<<<< HEAD
-        // GET api/pesquisar/inativos
+        /// <returns>Uma lista de Pacotes inativos</returns>
+        
         [HttpGet("pesquisar/inativos")]
-=======
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-        [HttpGet("pesquisar/ativos")]
-
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarInativos(int id)
         {
@@ -95,18 +75,12 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de forma ascendente
         /// </summary>
-<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ordenados por preço de forma ascendente</returns>
         // GET api/pesquisar/ordenar
-        [HttpGet("pesquisar/ordenar/asc/")]
-=======
-        /// <returns>Uma lista de Pacotes ativos</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        [HttpGet("pesquisar/inativos")]
-
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
+        [HttpGet("pesquisar/ordenar/asc/")]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarOrdenadoPorPreco()
         {
@@ -126,18 +100,11 @@ namespace Senai.Senatur.WebApi.Controllers
         /// <summary>
         /// Lista todos os pacotes, mas ordenados por preço de fkrma decrescente
         /// </summary>
-<<<<<<< HEAD
         /// <returns>Uma lista de Pacotes ordenados por preço de forma decrescente</returns>
         // GET api/pesquisar/ordenar
-        [HttpGet("pesquisar/ordenar/desc/")]
-=======
-        /// <returns>Uma lista de Pacotes ordenados por preço</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-        [HttpGet("pesquisar/ordenar")]
-
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
+        [HttpGet("pesquisar/ordenar/desc/")]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarOrdenadoPorPrecoDesc()
         {
@@ -157,6 +124,9 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <returns>Uma lista de Pacotes de uma cidade específicia</returns>
         // GET api/pesquisar/cidade/{nomecidade}
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         [HttpGet("pesquisar/cidade/{nomecidade}")]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarPorCidade(string nomeCidade)
@@ -179,6 +149,9 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <returns>Uma lista de Pacotes</returns>
         // GET api/Pacotes
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         [HttpGet]
         [Authorize(Roles = "1, 2")]
         public IActionResult ListarTodos()
@@ -194,6 +167,25 @@ namespace Senai.Senatur.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista pacotes por Id
+        /// </summary>
+        /// <returns>Uma um pacote</returns>
+        // GET api/Pacotes
+        [HttpGet("{id}")]
+        [Authorize(Roles = "1, 2")]
+        public IActionResult ListarPorId(int id)
+        {
+            try
+            {
+                var listaPorID = _pacotesRepository.ListarPorId(id);
+                return Ok(listaPorID);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
 
 
         /// <summary>
@@ -276,25 +268,6 @@ namespace Senai.Senatur.WebApi.Controllers
                 return BadRequest(e);
             }
 
-        }
-        /// <summary>
-        /// Lista pacotes por Id
-        /// </summary>
-        /// <returns>Uma um pacote</returns>
-        // GET api/Pacotes
-        [HttpGet("{id}")]
-        [Authorize(Roles = "1, 2")]
-        public IActionResult ListarPorId(int id)
-        {
-            try
-            {
-                var listaPorID = _pacotesRepository.ListarPorId(id);
-                return Ok(listaPorID);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
         }
     }
 }

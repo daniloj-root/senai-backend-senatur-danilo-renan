@@ -75,6 +75,7 @@ namespace Senai.Senatur.WebApi.Controllers
                 return BadRequest(e);
             }
         }
+
         // POST api/Usuarios
         /// <summary>
         /// Cadastra um novo usuário
@@ -106,16 +107,11 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <param name="usuarioLogando">objeto Usuarios populado com email e senha</param>
         /// <returns>Token de autorização JWT - StatusCode 200</returns>
-<<<<<<< HEAD
-        //POST api/Usuarios/Login
-        [HttpPost("login")]
-=======
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
         [HttpPost("login")]
 
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         public IActionResult Login(UsuarioViewModel usuarioLogando)
         {
             var usuarioLogado = _usuariosRepository.ListarPorEmailSenha(usuarioLogando.Email, usuarioLogando.Senha);
@@ -149,7 +145,6 @@ namespace Senai.Senatur.WebApi.Controllers
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             });
-        
         }
 
         // PUT api/Usuarios/5
@@ -158,10 +153,6 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <param name="usuarioAtualizado">objeto Usuários com um id existente e as informações a serem atualizadas</param>
         /// <returns>StatusCode 200</returns>
-<<<<<<< HEAD
-        // PUT api/Usuarios/
-        [HttpPut]
-=======
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -169,7 +160,6 @@ namespace Senai.Senatur.WebApi.Controllers
 
         [HttpPut("{id}")]
 
->>>>>>> 2999dd3b329714dfcc05ee5be0609061924fe93e
         public IActionResult Atualizar(Usuarios usuarioAtualizado)
         {
             var usuarioEscolhido = _usuariosRepository.ListarPorId(usuarioAtualizado.IdUsuario);
@@ -198,6 +188,7 @@ namespace Senai.Senatur.WebApi.Controllers
         /// </summary>
         /// <param name="id">ID do usuário</param>
         /// <returns>StatusCode 200</returns>
+
         // DELETE api/Usuarios/5
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
